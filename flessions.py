@@ -21,7 +21,7 @@ try:
     toolbar = DebugToolbarExtension()
     app.config['DEBUG_TB_ENABLED'] = True
     toolbar.init_app(app)
-    print ">>>>>> Using sweet debug toolbar."
+    print(">>>>>> Using sweet debug toolbar.")
 except ImportError:
     pass
 
@@ -31,8 +31,8 @@ from boxsdk import Client
 from boxsdk.exception import BoxAPIException
 from boxsdk.object.collaboration import CollaborationRole
 
-import ConfigParser
-config = ConfigParser.RawConfigParser()
+import configparser
+config = configparser.RawConfigParser()
 config.read('boxapp.cfg')
 
 CLIENT_ID = config.get('boxapp', 'CLIENT_ID')
@@ -70,8 +70,8 @@ def get_tokens(oauth_class=OAuth2):
     auth_code['state'] = request.args.get('state')
 
     # does our nonce match up?
-    print auth_code['state']
-    print session['csrf_token','nope']
+    print(auth_code['state'])
+    print(session['csrf_token','nope'])
     #assert auth_code['state'] == session['csrf_token']
 
     oauth = oauth_class(
