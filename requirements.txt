@@ -1,4 +1,4 @@
 Flask==1.0
 Flask-Session==0.3.1
 boxsdk==2.5.0
-redis==3.2.1
+redis==4.5.3
